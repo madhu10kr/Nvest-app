@@ -1,0 +1,42 @@
+.tdDashboard{
+    margin: 0;
+}
+.styleRow {
+    margin:0;
+    padding:0;
+}
+
+.styleCol {
+    margin:0px;
+    height:200px;
+    font-size: 12px;
+    text-decoration: none !important;
+    transition: 500ms;
+}
+
+.svgicon {
+    height:150px;
+}
+
+.titleStyle {
+    text-align:center;
+}
+
+.svgiconstyle {
+    position:relative;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:70px;
+    width:30%;
+    transition: 500ms;
+}
+
+.styleCol:hover{
+    font-size:14px;
+    font-weight: 800;
+}
+.svgiconstyle:hover{
+    height:75px;
+    width:35%;
+}

@@ -1,0 +1,39 @@
+function onRowSelect(row, isSelected, e) {
+  let rowStr = '';
+  for (const prop in row) {
+    rowStr += prop + ': "' + row[prop] + '"';
+  }
+  console.log(e);
+  alert(`is selected: ${isSelected}, ${rowStr}`);
+}
+
+function onSelectAll(isSelected, rows) {
+  alert(`is select all: ${isSelected}`);
+  if (isSelected) {
+    alert('Current display and selected data: ');
+  } else {
+    alert('unselect rows: ');
+  }
+  for (let i = 0; i < rows.length; i++) {
+    alert(rows[i].id);
+  }
+}
+
+const selectRowProp = {
+  mode: 'checkbox',
+  clickToSelect: true,
+  onSelect: onRowSelect,
+  onSelectAll: onSelectAll
+};
+
+class SelectHookTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } selectRow={ selectRowProp }>
+          <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}

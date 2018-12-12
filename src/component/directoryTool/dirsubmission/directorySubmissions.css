@@ -1,0 +1,30 @@
+.directoryContainer{
+    margin-top: 12px;
+}
+.dirRowsubmission{
+    height:100vh;
+    margin:20px 0 0 0;
+    background-color:rgb(184, 184, 184);
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.table th{
+    border: none;
+    color: white;
+    background-color: #1B2443;
+}
+.table tr{
+    background-color: white;
+}
+.idstyle{
+    display: none;
+}
+.directTotal{
+    color: white;
+    padding: 12px;
+    background-color: #1b2443;
+}
+.Proceed{
+    float: right;
+    border-radius: 0;
+}

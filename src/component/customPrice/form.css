@@ -1,0 +1,32 @@
+.NextButtonStyle{
+  margin-top:12px;
+    border-radius: 0;
+    background-color:#1b2443;
+    color: white;
+    float: right;
+}
+.NextButtonStyle:hover{
+  background-color:#1b2443;
+}
+.spacing{
+  width: 16px;
+  padding: 40px;
+  height: 100%;
+}
+.inputBox{
+  outline:none;
+  box-shadow:none;
+  border:0;
+  border-radius: 0;
+}
+.inputBox:focus{
+  outline:none;
+  box-shadow:none;
+  border:0;
+}
+.ercForm{
+    height: 100%;
+    margin:20px 0 0 0;
+    background-color:#e0e0e0;
+    padding:20px;
+}
