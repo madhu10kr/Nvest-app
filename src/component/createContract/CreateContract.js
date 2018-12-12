@@ -6,7 +6,6 @@ import Wallet from '../Wallet/Wallet';
 class CreateContract extends Component {
     state = {
         hide: true,
-        address:true,
         textArea:null,
     }
 
@@ -16,17 +15,9 @@ class CreateContract extends Component {
         })
     }
     toggleWallet = () => {
-        if(this.state.textArea.length < 10) {
-            this.setState({
-                address: false,
-                hide:true
-            });
-        } else {
-            this.setState({
-                address:true,
-                hide: false
-            });
-        }
+        this.setState({
+            hide: false
+        });
         console.log(this.state.textArea)
     }
     render() {
@@ -42,8 +33,6 @@ class CreateContract extends Component {
                         <p>Owner Ethereum Address</p>
                         <form>
                             <textarea className="form-control textArea" id="textArea" onChange={this.handleChange}></textarea>
-                            <br></br>
-                        {this.state.address ? "" : <span className="span">**Address should be minimum 10 characters</span>}
                         </form>
                     </div>
                     <div className="col-sm-12 col-md-6 ">
