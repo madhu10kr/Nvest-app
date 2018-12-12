@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './wallet.css';
+import Modal from '../modal/modal';
 
 class Wallet extends Component {
     state={
@@ -8,6 +9,7 @@ class Wallet extends Component {
         Ethereum:false,
         card:false,
         enteredAmount:null,
+        modalDisplay:false,
     }
     handleChange=(e)=>{
         this.setState({
@@ -33,6 +35,9 @@ class Wallet extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault();
+        this.setState({
+            modalDisplay:true
+        })
         console.log(this.state);
     }
     render() {
@@ -57,6 +62,7 @@ class Wallet extends Component {
                         <div className="btnContainer" >
                             <button className="btn wPrevious">Previous</button>
                             <button className="btn wPurchase btn-success">Purchase</button>
+                            {this.state.modalDisplay ? <Modal /> : ""}
                         </div>
                     </form>
                 </div>

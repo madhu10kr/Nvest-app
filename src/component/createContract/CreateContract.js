@@ -3,6 +3,7 @@ import './createContract.css';
 import Wallet from '../Wallet/Wallet';
 
 
+
 class CreateContract extends Component {
     state = {
         hide: true,

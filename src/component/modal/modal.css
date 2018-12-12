@@ -1,0 +1,19 @@
+.modal-container .modal-content {
+    background-color: #1b2443;
+    height: 200px;
+    width: 60%;
+}
+
+.modal-container .modal-title {
+    text-align: center;
+    color: white
+}
+
+.modal-container .modal-body {
+    text-align: center;
+    color: white
+}
+
+.modal-container .close {
+    color: white
+}
