@@ -23,7 +23,7 @@ class CreateContract extends Component {
     render() {
         return (
             <div className="directoryContainer">
-                <div className="col-sm-12">
+                <div className="col-sm-12 top-container">
                     <p><strong>CREATE</strong><br />CONTRACT</p>
                     <div className="line"></div>
                 </div>
@@ -32,15 +32,15 @@ class CreateContract extends Component {
                     <div className="col-sm-12 col-md-6 CCaddress">
                         <p>Owner Ethereum Address</p>
                         <form>
-                            <textarea className="form-control textArea" id="textArea" onChange={this.handleChange}></textarea>
+                            <textarea className="form-control col-md-6 textArea" id="textArea" onChange={this.handleChange}></textarea>
                         </form>
                     </div>
-                    <div className="col-sm-12 col-md-6 ">
-                        <p className="CCcontent">
+                    <div className="col-sm-12 col-md-12 ">
+                        <p className="CCcontent col-md-6">
                             You'll be charged $2,000 (USD). If there are enough funds in your wallet, we'll auto deduct balance otherwise you'll be redirected to wallet
                         </p>
                     </div>
-                    <div className="col-sm-12 col-md-6 btnContainer" >
+                    <div className="col-sm-12 col-md-12 btnContainer" >
                         <button className="btn CCprevious">Previous</button>
                         <button className="btn CCProceed" onClick={this.toggleWallet}>Proceed & Pay $2000 USD</button>
                     </div>

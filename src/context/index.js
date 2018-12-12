@@ -40,6 +40,7 @@ export class Provider extends Component {
     render() {
         
         return (
+            <div className="index">
             <NvestContext.Provider value={{
                 data: this.state.data,
                 ercForm:this.state.ercForm,
@@ -50,6 +51,7 @@ export class Provider extends Component {
             {console.log(this.state)}
                 {this.props.children}
             </NvestContext.Provider>
+            </div>
         )
     }
 }

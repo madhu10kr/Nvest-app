@@ -59,7 +59,7 @@ class Form extends Component {
                       <form onSubmit={this.handleSubmit}>
                         <div>
                           <div className="form-row formSplit">
-                            <div className="col-md-5 splitInputForm">
+                            <div className="col-md-6 splitInputForm">
                               <div className="form-group"><label>Token Name</label><input className="form-control inputBox" type="text" id="text1" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>Token Symbol</label><input className="form-control inputBox" type="text" id="text2" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>ICO Start Date</label><select className="form-control inputBox" id="text3" onChange={this.handleChange}><optgroup label="This is a group"><option value="This is item 1" >This is item 1</option><option value="This is item 2">This is item 2</option><option value="This is item 3">This is item 3</option></optgroup></select></div>
@@ -69,8 +69,8 @@ class Form extends Component {
                               <div className="form-group"><label>Tokens per ETH</label><input className="form-control inputBox" type="text" id="text6" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>Max Token supply</label><select className="form-control inputBox" id="text7" onChange={this.handleChange}><optgroup label="This is a group"><option value="12" >This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
                             </div>
-                            <div className="spacing"></div>
-                            <div className="col-md-5 splitInputForm">
+                            
+                            <div className="col-md-6 splitInputForm">
                               <div className="form-group"><label>Phase Name</label><input className="form-control inputBox" type="text" id="text8" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>Start Date</label><select className="form-control inputBox" id="text9" onChange={this.handleChange}><optgroup label="This is a group"><option value="12" >This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
                               <div

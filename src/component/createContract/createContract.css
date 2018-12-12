@@ -1,11 +1,13 @@
+
+.top-container{
+    background-color: white;
+}
 .createContract{
-    height: 100%;
+    background-color: #e0e0e0;
     margin:20px 0 0 0;
-    background-color:#e0e0e0;
     padding:20px;
 }
 .CCaddress{
-    position: relative;
     top: 50px;
     margin-bottom: 70px;
     
@@ -40,7 +42,6 @@
     background-color:#1b2443;
     color: white;
 }
-
 
 
 
