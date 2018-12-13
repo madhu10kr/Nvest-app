@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './wallet.css';
-import Modal from '../modal/modal';
+import Modal from '../modal/Modal';
 
 class Wallet extends Component {
     state={
@@ -43,7 +43,7 @@ class Wallet extends Component {
     render() {
         return (
             <div className="wallet">
-                <div className="col-sm-12 col-md-6 walletCB">
+                <div className="col-sm-12  walletCB">
                     <div className="currenrBalanceContainer">
                         <span>Cuurent Balance</span><span className="walletAmount"><strong>$9121</strong></span>
                         <hr style={{ backgroundColor: "black", border: "1px solid #909090" }} />
@@ -51,17 +51,17 @@ class Wallet extends Component {
                     <br />
                     <form onSubmit={this.handleSubmit}>
                         <p>Amount to Add (USD)</p>
-                        <input type="number" name="walletAmount" id="enteredAmount" className="form-control inputForm" onChange={this.handleChange} placeholder="Enter Amount" />
+                        <input type="number" name="walletAmount" id="enteredAmount"  className="form-control inputForm" onChange={this.handleChange} placeholder="Enter Amount" />
                         <br />
                         <div className="CCradio">
-                            <label className="customLabelStyle"><input type="radio" name="payment" id="bitcoin" onChange={this.handleChangeRadio} /><span className="radioStyle">( Bitcoin )</span></label>
-                            <label className="customLabelStyle"><input type="radio" name="payment" id="Litecoin" onChange={this.handleChangeRadio} /><span className="radioStyle">( Litecoin )</span></label>
-                            <label className="customLabelStyle"><input type="radio" name="payment" id="Ethereum" onChange={this.handleChangeRadio} /><span className="radioStyle">( Ethereum )</span></label><br />
-                            <label className="customLabelStyle"><input type="radio" name="payment" id="card" onChange={this.handleChangeRadio} /><span className="radioStyle">( Credit Card via Stripe )</span></label>
+                            <label className="customLabelStyle"><input type="radio"  name="payment" id="bitcoin" onChange={this.handleChangeRadio} /><span className="radioStyle">( Bitcoin )</span></label>
+                            <label className="customLabelStyle"><input type="radio"  name="payment" id="Litecoin" onChange={this.handleChangeRadio} /><span className="radioStyle">( Litecoin )</span></label>
+                            <label className="customLabelStyle"><input type="radio"  name="payment" id="Ethereum" onChange={this.handleChangeRadio} /><span className="radioStyle">( Ethereum )</span></label>
+                            <label className="customLabelStyle"><input type="radio"  name="payment" id="card" onChange={this.handleChangeRadio} /><span className="radioStyle">( Credit Card via Stripe )</span></label>
                         </div>
                         <div className="btnContainer" >
-                            <button className="btn wPrevious">Previous</button>
-                            <button className="btn wPurchase btn-success">Purchase</button>
+                            <button className="btn btn-danger wPrevious">Previous</button>
+                            <button className="btn btn-success wPurchase btn-success">Purchase</button>
                             {this.state.modalDisplay ? <Modal /> : ""}
                         </div>
                     </form>

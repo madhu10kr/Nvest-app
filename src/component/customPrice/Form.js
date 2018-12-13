@@ -1,100 +1,237 @@
 import React, { Component } from 'react';
-import './ercForm.css';
-import { Consumer } from '../../context/index';
-import { NavLink } from 'react-router-dom';
-import './ercForm.css'
-
+import './form.css';
+import {NavLink} from 'react-router-dom';
+import Modal from '../modal/modal';
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text1: "",
-      text2: "",
-      text3: "",
-      text4: "",
-      text5: "",
-      text6: "",
-      text7: "",
-      text8: "",
-      text9: "",
-      text10: "",
-      text11: "",
-      text12: "",
-      text13: "",
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            text1: "",
+            text2: "",
+            text3: "",
+            text4: "",
+            text5: "",
+            text6: "",
+            text7: "",
+            text8: "",
+            text9: "",
+            text10: "",
+            text11: "",
+            text12: "",
+            text13: "",
+            text14: "",
+            text15: "",
+            selectValue1: "",
+            selectValue2: "",
+            selectValue3: "",
+            selectValue4: "",
+            selectValue5: "",
+            btnClick:false
+        };
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
+        this.handleClose = this.handleClose.bind(this);
     }
-    )
-  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ show: true });
-    this.context.actions.ercFormData(this.state);
-  }
+    handleClose() {
+        this.setState({ show: false });
+    }
 
-  render() {
 
-    return (
-      <div className="App">
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        }
+        )
+    }
 
-        <div className="directoryContainer">
-          <div className="col-sm-12">
-            <p><strong>CREATE</strong><br />CONTRACT</p>
-            <div className="line"></div>
-          </div>
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.setState({ btnClick: true });
+        console.log(this.state);
+    }
 
-          <div className="col-xs-12 ercForm">
-            <Consumer>
-              {context => {
-                return (
-                  <div>
-                    <div>
-                    {console.log(context)}
-                      <form onSubmit={this.handleSubmit}>
-                        <div>
-                          <div className="form-row formSplit">
-                            <div className="col-md-5 splitInputForm">
-                              <div className="form-group"><label>Token Name</label><input className="form-control inputBox" type="text" id="text1" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Token Symbol</label><input className="form-control inputBox" type="text" id="text2" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>ICO Start Date</label><select className="form-control inputBox" id="text3" onChange={this.handleChange}><optgroup label="This is a group"><option value="This is item 1" >This is item 1</option><option value="This is item 2">This is item 2</option><option value="This is item 3">This is item 3</option></optgroup></select></div>
-                              <div
-                                className="form-group"><label>ICO End Date</label><input className="form-control inputBox" type="text" id="text4" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Min CPA in ETH</label><input className="form-control inputBox" type="text" id="text5" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Tokens per ETH</label><input className="form-control inputBox" type="text" id="text6" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Max Token supply</label><select className="form-control inputBox" id="text7" onChange={this.handleChange}><optgroup label="This is a group"><option value="12" >This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                            </div>
-                            <div className="spacing"></div>
-                            <div className="col-md-5 splitInputForm">
-                              <div className="form-group"><label>Phase Name</label><input className="form-control inputBox" type="text" id="text8" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Start Date</label><select className="form-control inputBox" id="text9" onChange={this.handleChange}><optgroup label="This is a group"><option value="12" >This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                              <div
-                                className="form-group"><label>End Date</label><select className="form-control inputBox" id="text10" onChange={this.handleChange}><optgroup label="This is a group"><option value="12" >This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
-                              <div
-                                className="form-group"><label>Max Token supply</label><input className="form-control inputBox" type="text" id="text11" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Contract Address</label><input className="form-control inputBox" type="text" id="text12" onChange={this.handleChange} /></div>
-                              <div className="form-group"><label>Notifier Private Key</label><input className="form-control inputBox" type="text" id="text13" onChange={this.handleChange} /></div>
-                              <NavLink to="/create-contract"><br /><button className="btn btn-primary NextButtonStyle">Submit</button></NavLink>
-                            </div>
-                          </div>
+    render() {
+
+        return (
+            <div className="App">
+
+                <div className="heading">
+                    <h5 className="text-left">GET ICODASH</h5>
+                    <h5 className="text-left">PLATFORM PRICING</h5>
+                </div>
+                <hr></hr>
+                <div className="back-ground">
+                    <div className="row">
+
+                        <div className="column left">
+                            <form className="text-left" onSubmit={this.handleSubmit}>
+                                <div className="column1">
+                                    <div>
+                                        <label className="label">Deadline for completion</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text1" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Which currencies are you planning to accept as payment methods?</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text2" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Is your token already created?</label>
+                                        <br />
+                                        <select className="form-control rounded-0 border-0 w-100 p-2" onChange={this.handleChange} name="selectValue1">
+                                            <option value="">Please Choose</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Is yes, Enter token name:</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text3" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is your current Nvest website?</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text4" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Do you need new Nvest websites and landing pages designed as well?Do you need new Nvest websites and landing pages designed as well?</label>
+                                        <br />
+                                        <select className="form-control rounded-0 border-0 w-100 p-2" onChange={this.handleChange} name="selectValue2">
+                                            <option value="">Please Choose</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Cost vs perfection: How much reskinning and design do you require of our</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-4" name="text5" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Do you have a solname tech team or indivnameual in your organization?</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text6" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Will you require any custom features for your ICO campaign that we don'tnpmnn</label>
+                                        <br />
+                                        <select className="form-control rounded-0 border-0 w-100 p-2" onChange={this.handleChange} name="selectValue3">
+                                            <option value="">Please Choose</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">If yes, please describe them:</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-4" name="text7" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is the sub domain you want it hosted on?</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text8" onChange={this.handleChange}></input>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
-                      </form>
-                    </div>
 
-                    {console.log(context)}</div>
-                )
-              }}
-            </Consumer>
-          </div>
-        </div>
-      </div>
-    );
-  }
+
+
+                        <div className="column right">
+                            <form className="text-left" onSubmit={this.handleSubmit}>
+                                <div className="column2">
+                                    <div className="form-group">
+                                        <label className="label">Do you want it hosted on your servers </label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text9" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Do you need your ICO</label>
+                                        <br />
+                                        <select className="form-control rounded-0 border-0 w-100 p-2" onChange={this.handleChange} name="selectValue4">
+                                            <option value="">Please Choose</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Are you intrested in getting PR</label>
+                                        <br />
+                                        <select className="form-control rounded-0 border-0 w-100 p-2" onChange={this.handleChange} name="selectValue5">
+                                            <option value="">Please Choose</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is your initial token pricing?</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text10" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">Do you need your ICO</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text11" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is your budget</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text12" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is your timeframe</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text13" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What factor will impact</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text14" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label className="label">What is the best method</label>
+                                        <br />
+                                        <input type="text" className="form-control rounded-0 border-0 w-100 p-2" name="text15" onChange={this.handleChange}></input>
+                                    </div>
+
+                                    <div className="text-right">
+
+                                        <div>
+                                            <button>SUBMIT</button>
+                                            {this.state.btnClick ? <Modal href="#popup1"/> : ""}
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        );
+    }
 };
 
 

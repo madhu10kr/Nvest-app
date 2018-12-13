@@ -2,6 +2,7 @@
     position: relative;
     top: 50px;
     margin-bottom: 70px;
+    padding-left: 0;
 }
 .walletAmount{
     float: right;
@@ -27,6 +28,7 @@ input[type=radio] {
 }
 
 .wPrevious{
+    border: 0;
     margin-top:12px;
     border-radius: 0;
     background-color:#ff7d7d; 
@@ -34,6 +36,7 @@ input[type=radio] {
     margin-right:12px;
 }
 .wPurchase{
+    border: 0;
     margin-top:12px;
     border-radius: 0;
     color: white;

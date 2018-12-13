@@ -27,31 +27,27 @@ export class Provider extends Component {
             { logo: spring_role, title: "Spring Role", link: '/spring-role', id: "10" },
         ],
         ercForm:[
-
+            
         ]
     }
-    ercFormdataRender = (formData) => {
-        formData.id = Math.random();
-        const dataupdate = [...this.state.data, formData]
-        this.setState({
-            ercForm: dataupdate
-        })
-    }
+    
+    // ercdataRender = (ercData) => {
+    //     const dataupdate = [...this.state.ercForm, ercData]
+    //     this.setState({
+    //     ercForm: dataupdate
+    //     })
+    // }
+
     render() {
         
         return (
-            <div className="index">
             <NvestContext.Provider value={{
                 data: this.state.data,
                 ercForm:this.state.ercForm,
-                actions: {
-                    ercFormData: this.ercFormdataRender
-                }
+                ercdataRender: this.ercdataRender
             }}>
-            {console.log(this.state)}
                 {this.props.children}
             </NvestContext.Provider>
-            </div>
         )
     }
 }

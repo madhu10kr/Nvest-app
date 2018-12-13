@@ -8,7 +8,11 @@
 .NextButtonStyle:hover{
   background-color:#1b2443;
 }
-
+.spacing{
+  width: 16px;
+  padding: 40px;
+  height: 100%;
+}
 .inputBox{
   outline:none;
   box-shadow:none;
@@ -25,4 +29,5 @@
     margin:20px 0 0 0;
     background-color:#e0e0e0;
     padding:20px;
+    padding-left:0;
 }

@@ -6,7 +6,7 @@ import './container.css';
 class Container extends Component {
     render() {
         return (
-            <div className="container1">
+            <div>
                 <TdDasboard />
             </div>
         )

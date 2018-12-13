@@ -1,13 +1,12 @@
-
-.top-container{
-    background-color: white;
-}
 .createContract{
-    background-color: #e0e0e0;
+    height: 100%;
     margin:20px 0 0 0;
-    padding:20px;
+    padding-bottom: 20px;
+    background-color: #e0e0e0;
+    padding-left:0;
 }
 .CCaddress{
+    position: relative;
     top: 50px;
     margin-bottom: 70px;
     
@@ -30,18 +29,29 @@
     color: white;
 }
 .CCprevious{
+    border: 0;
     margin-top:12px;
     border-radius: 0;
     background-color:#ff7d7d; 
     color: white;
     margin-right:12px;
 }
+.CCprevious:hover{
+    border: 0;
+}
 .CCProceed{
+    border: 0;
     margin-top:12px;
     border-radius: 0;
     background-color:#1b2443;
     color: white;
 }
-
+.CCProceed:hover{
+    border: 0;
+    background-color:#1b2443;
+}
+.top-container{
+    background-color: #fff;
+}
 
 

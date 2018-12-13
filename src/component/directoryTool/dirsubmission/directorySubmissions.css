@@ -1,4 +1,6 @@
-
+.directoryContainer{
+    margin-top: 12px;
+}
 .dirRowsubmission{
     height:100vh;
     margin:20px 0 0 0;
