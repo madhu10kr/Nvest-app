@@ -18,7 +18,7 @@ class ModalDisplay extends Component {
         this.props.view()
     };
 
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
             show:true
         })
