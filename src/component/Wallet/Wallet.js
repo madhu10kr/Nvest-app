@@ -37,9 +37,17 @@ class Wallet extends Component {
         e.preventDefault();
         this.setState({
             modalDisplay:true
-        })
+        });
         console.log(this.state);
     }
+
+    changeView() {
+        this.setState({
+            modalDisplay:false
+        })
+    }
+
+    
     render() {
         return (
             <div className="wallet">
@@ -62,7 +70,7 @@ class Wallet extends Component {
                         <div className="btnContainer" >
                             <button className="btn btn-danger wPrevious">Previous</button>
                             <button className="btn btn-success wPurchase btn-success">Purchase</button>
-                            {this.state.modalDisplay ? <Modal /> : ""}
+                            {this.state.modalDisplay ? <Modal view={this.changeView.bind(this)} /> : ""}
                         </div>
                     </form>
                 </div>

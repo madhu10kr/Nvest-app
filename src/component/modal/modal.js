@@ -15,13 +15,14 @@ class ModalDisplay extends Component {
 
     handleHide() {
         this.setState({ show: false });
+        this.props.view()
     };
 
     componentDidMount() {
         this.setState({
-            show: true
+            show:true
         })
-    };
+    }
 
     render() {
         return (

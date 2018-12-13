@@ -1,4 +1,6 @@
 .modal-container .modal-content {
+    position: absolute;
+    left: 20%;
     background-color: #1b2443;
     height: 200px;
     width: 60%;
