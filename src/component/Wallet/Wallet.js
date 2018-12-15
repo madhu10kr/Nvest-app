@@ -4,10 +4,12 @@ import Modal from '../modal/Modal';
 
 class Wallet extends Component {
     state={
-        bitcoin:false,
-        Litecoin:false,
-        Ethereum:false,
-        card:false,
+        payment:{
+            bitcoin:false,
+            Litecoin:false,
+            Ethereum:false,
+            card:false
+        },
         enteredAmount:null,
         modalDisplay:false,
     }
@@ -20,25 +22,29 @@ class Wallet extends Component {
     handleChangeRadio = (e)=>{
         let val = e.target.id;
         if(this.state.val){
-            this.setState({bitcoin:false,
-                Litecoin:false,Ethereum:false,
-                card:false,[e.target.id]:false
-            })
+            this.setState({payment : {bitcoin:false,
+                    Litecoin:false,Ethereum:false,
+                    card:false,[e.target.id]:false
+                }})
         } else {
-            this.setState({bitcoin:false,
-                Litecoin:false,Ethereum:false,
-                card:false,[e.target.id]:true
-            })
+            this.setState({payment : {bitcoin:false,
+                    Litecoin:false,Ethereum:false,
+                    card:false,[e.target.id]:true
+                }})
         }
         
     }
 
     handleSubmit=(e)=>{
+        let selectedData = {};
         e.preventDefault();
         this.setState({
             modalDisplay:true
         });
-        console.log(this.state);
+        for(let i in this.state.payment) {
+            if(this.state.payment[i] !== false) {selectedData[i] = i}
+        }
+        console.log("selectedData", selectedData);
     }
 
     changeView=()=>{
