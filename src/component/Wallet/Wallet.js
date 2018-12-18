@@ -36,7 +36,7 @@ class Wallet extends Component {
     }
 
     handleSubmit=(e)=>{
-        let selectedData = {};
+        let selectedData = {enteredAmount:this.state.enteredAmount};
         e.preventDefault();
         this.setState({
             modalDisplay:true

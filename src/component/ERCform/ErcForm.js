@@ -28,17 +28,19 @@ class Form extends Component {
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
-    }
-    )
+    })
   }
+
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    
+    console.log(this.state)
   }
 
   render() {
+    let {text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13} = this.state;
+    const isEnabled = text1.length > 0 && text2.length > 0 && text3.length > 0 && text4.length > 0 && text5.length > 0 && text6.length > 0 && text7.length > 0 && text8.length > 0 && text9.length > 0 && text10.length > 0 && text11.length > 0 && text12.length > 0 && text13.length > 0;
+
     return (
       <div className="ercFormContainer">
 
@@ -76,9 +78,7 @@ class Form extends Component {
                                 className="form-group"><label>Max Token supply</label><input className="form-control inputBox" type="text" id="text11" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>Contract Address</label><input className="form-control inputBox" type="text" id="text12" onChange={this.handleChange} /></div>
                               <div className="form-group"><label>Notifier Private Key</label><input className="form-control inputBox" type="text" id="text13" onChange={this.handleChange} /></div>
-                              <NavLink to="/create-contract"><br /><button className="btn btn-primary NextButtonStyle">Submit</button></NavLink>
-                              {/* <button className="btn btn-primary NextButtonStyle">console</button> */}
-
+                              <NavLink to="/create-contract"><br /><button disabled={!isEnabled} className="btn btn-primary NextButtonStyle">Submit</button></NavLink>
                             </div>
                           </div>
                         </div>
