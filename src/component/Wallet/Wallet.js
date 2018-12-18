@@ -4,13 +4,8 @@ import Modal from '../modal/Modal';
 
 class Wallet extends Component {
     state={
-        payment:{
-            bitcoin:false,
-            Litecoin:false,
-            Ethereum:false,
-            card:false
-        },
-        enteredAmount:null,
+        enteredAmount:"",
+        radioValue:"",
         modalDisplay:false,
     }
     handleChange=(e)=>{
@@ -20,30 +15,17 @@ class Wallet extends Component {
     }
 
     handleChangeRadio = (e)=>{
-        let val = e.target.id;
-        if(this.state.val){
-            this.setState({payment : {bitcoin:false,
-                    Litecoin:false,Ethereum:false,
-                    card:false,[e.target.id]:false
-                }})
-        } else {
-            this.setState({payment : {bitcoin:false,
-                    Litecoin:false,Ethereum:false,
-                    card:false,[e.target.id]:true
-                }})
-        }
-        
+        this.setState({
+            radioValue:e.target.value
+        })
     }
 
     handleSubmit=(e)=>{
-        let selectedData = {enteredAmount:this.state.enteredAmount};
         e.preventDefault();
+        let selectedData = {enterdAmount:this.state.enteredAmount,radioValue:this.state.radioValue};
         this.setState({
             modalDisplay:true
         });
-        for(let i in this.state.payment) {
-            if(this.state.payment[i] !== false) {selectedData[i] = i}
-        }
         console.log("selectedData", selectedData);
     }
 
@@ -53,8 +35,9 @@ class Wallet extends Component {
         })
     }
 
-    
     render() {
+        let {enteredAmount,radioValue} = this.state;
+        const isEnabled = enteredAmount.length > 0 && radioValue.length > 0;
         return (
             <div className="wallet">
                 <div className="col-sm-12  walletCB">
@@ -75,7 +58,7 @@ class Wallet extends Component {
                         </div>
                         <div className="btnContainer" >
                             <button className="btn btn-danger wPrevious">Previous</button>
-                            <button className="btn btn-success wPurchase btn-success">Purchase</button>
+                            <button className="btn btn-success wPurchase btn-success" disabled={!isEnabled}>Purchase</button>
                             {this.state.modalDisplay ? <Modal view={this.changeView} /> : ""}
                         </div>
                     </form>

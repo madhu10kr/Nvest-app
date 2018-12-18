@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './createContract.css';
+import { NavLink } from 'react-router-dom';
 import Wallet from '../Wallet/Wallet';
 
 
 class CreateContract extends Component {
     state = {
         hide: true,
-        textArea: null,
+        textArea: "",
     }
 
     handleChange = (e) => {
@@ -22,6 +23,8 @@ class CreateContract extends Component {
         console.log(this.state.textArea)
     }
     render() {
+        let {hide,textArea} = this.state;
+        const isEnabled = textArea.length > 0 ;
         return (
             <div className="directoryContainer">
                 <div className="col-sm-12 top-container">
@@ -38,8 +41,8 @@ class CreateContract extends Component {
                             <p className="CCcontent">
                                 You'll be charged $2,000 (USD). If there are enough funds in your wallet, we'll auto deduct balance otherwise you'll be redirected to wallet
                             </p>
-                            <button className="btn btn-danger CCprevious">Previous</button>
-                            <button className="btn btn-primary CCProceed" onClick={this.toggleWallet}>Proceed & Pay $2000 USD</button>
+                            <NavLink to="/create-ERC"><br /><button type="button" className="btn btn-danger CCprevious">Previous</button></NavLink>
+                            <button className="btn btn-primary CCProceed" disabled={!isEnabled} onClick={this.toggleWallet}>Proceed & Pay $2000 USD</button>
                             
                         </form>
                         {this.state.hide ? '': <Wallet />}
